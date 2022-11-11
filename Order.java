@@ -34,5 +34,21 @@ public class Order {
         return orderNumber == o.orderNumber;
     }
 
+    public void addDish(Food f){
+
+    }
+
+    public void removeDish(Food f){
+
+    }
+
+    public double getTotal(){
+        return "";
+    }
+
+    public String getPossibleStatuses(){
+        return status;
+    }
+
     
 }
