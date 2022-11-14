@@ -18,6 +18,11 @@ public class Food{
         this.price = price;
     }
 
+    public String toString(){
+        return name + " " + price;
+    }
+
+
 
     
 }

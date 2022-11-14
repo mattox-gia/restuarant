@@ -14,7 +14,9 @@ public class TableOrder extends Order {
         this.tableNumber = tableNumber;
     }
 
-    
+    public String toString(){
+        return "Table Number: "+tableNumber;
+    }
 
 
 }

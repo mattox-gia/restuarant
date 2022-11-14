@@ -21,6 +21,8 @@ public class TakeoutOrder extends Order{
         this.customer = customer;
     }
 
-    
+    public String toString(){
+        return "Customer Name: "+customer;
+    }
 
 }

@@ -4,19 +4,26 @@ import java.util.ArrayList;
 public class Order {
     private ArrayList<Food> dishes;
     private int orderNumber;
-    private String status;
     private static int totalOrders = 0;
+    private String status;
 
     public Order(ArrayList<Food> dishes) {
         this.dishes = dishes;
         totalOrders++;
         this.orderNumber =totalOrders;
+        status = "Placed";
     }
     public Order(){
         totalOrders++;
         this.orderNumber =totalOrders;
         dishes = new ArrayList<>();
+        status = "Placed";
     }
+
+    public String getStatus(){
+        return status;
+    }
+
     public ArrayList<Food> getDishes() {
         return dishes;
     }
@@ -34,21 +41,12 @@ public class Order {
         return orderNumber == o.orderNumber;
     }
 
-    public void addDish(Food f){
-
-    }
-
-    public void removeDish(Food f){
-
-    }
-
     public double getTotal(){
-        return "";
+        return 0.0; //TODO
     }
 
-    public String getPossibleStatuses(){
-        return status;
+    public String toString(){
+        return "Ordder No:"+orderNumber+" Status: "+status+" Number of Dishes:"+dishes.size()+" Total: "+getTotal()+" ";
     }
-
     
 }
