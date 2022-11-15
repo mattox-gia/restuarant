@@ -30,7 +30,7 @@ public class Restaurant {
                 TableOrder t = new TableOrder(tableNumber);
                 t.setDishes(table_dishes);
                 orders.add(t);
-
+                break;
                 case 2:
                 System.out.println("TakeoutOrder goes here");
                 System.out.println("Customer Name: ");
@@ -39,6 +39,7 @@ public class Restaurant {
                 TakeoutOrder  w = new TakeoutOrder(customer_,dishes_);
                 w.setDishes(dishes_);
                 orders.add(w);
+                break;
 
                 case 3:
                 System.out.print("Customer Name: ");
@@ -51,7 +52,8 @@ public class Restaurant {
                 DeliveryOrder  o = new DeliveryOrder(customer, addr, phone);
                 o.setDishes(dishes);
                 orders.add(o);
-                
+                break;
+
                 case 4:
                 ans= 0;
                 while(ans <1 || ans > 3){
@@ -67,18 +69,35 @@ public class Restaurant {
                 for (int i =0; i<orders.size(); i++){
                     System.out.println(i+" "+orders.get(i));
                 }
-                System.out.println("Choice: 1");
-                int choice = sc.nextInt();
-                sc.nextLine();
-                Order order = orders.get(choice);
 
-                System.out.println(" 1. Update Status");
-                System.out.println("2. Add Dish");
-                System.out.println("3. Remove Dish");
-                System.out.print(" 4. Cancel Order");
-                    
-                    int a = sc.nextInt();
+                int a = -1;
+                while(ans != 0){
+                    System.out.println(" 1. Update Status");
+                    System.out.println("2. Add Dish");
+                    System.out.println("3. Remove Dish");
+                    System.out.print(" 4. Cancel Order");
+                    a = sc.nextInt();
                     sc.nextLine();
+            
+                switch(a){
+                    case 1:
+                    
+                    break;
+
+                    case 2:
+
+                    break;
+
+                    case 3:
+
+                    break;
+
+                    case 4:
+
+                    break;
+                
+                    
+                
                 //TODO 
                 /* Update status
                  * Add dish
@@ -156,8 +175,19 @@ public class Restaurant {
             
 
         }else if(n == 3){//Print orders by status
+            HashSet<String> orderStatuses = new HashSet<>();
+            for(Order o: orders)
+                orderStatuses.add(o.getStatus());
+        
+            for(String orderStatus:  orderStatuses){
+                for(Order o: orders){
+                    if(getType(o).equals(orderStatus)){
+                        System.out.println(o);
+                    }
+                }
+            }
 
-            //TODO see code for option 2.This is similar 
+    
         }
     }
 }
