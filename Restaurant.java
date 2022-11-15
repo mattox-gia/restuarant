@@ -104,10 +104,11 @@ public class Restaurant {
                  * Remove dish  
                  * Cancel order
                  */
-                break;
+                
             }
         }
-        
+    }
+}
     }
 
     public static void makeMenu(){
