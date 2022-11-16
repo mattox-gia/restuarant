@@ -81,18 +81,22 @@ public class Restaurant {
             
                 switch(a){
                     case 1:
+                    System.out.println("update status");
                     
                     break;
 
                     case 2:
+                    System.out.println("add dish");
 
                     break;
 
                     case 3:
+                    System.out.println("Remove Dish");
 
                     break;
 
                     case 4:
+                    System.out.println("Cancel order");
 
                     break;
                 

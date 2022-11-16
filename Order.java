@@ -19,6 +19,9 @@ public class Order {
         dishes = new ArrayList<>();
         status = "Placed";
     }
+    public void setStatus(String s){
+        status = s; 
+    }
 
     public String getStatus(){
         return status;
@@ -42,6 +45,9 @@ public class Order {
     }
 
     public double getTotal(){
+        for(int i = 0;i<totalOrders;i++){
+            
+        }
         return 0.0; //TODO
     }
 
