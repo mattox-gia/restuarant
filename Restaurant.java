@@ -78,25 +78,48 @@ public class Restaurant {
                     System.out.print(" 4. Cancel Order");
                     a = sc.nextInt();
                     sc.nextLine();
+
+                    for(int i =0; i <orders.size();i++){
+                        System.out.println(i+" "+orders.get(i));
+                    }
+                    int on  =sc.nextInt();
+                    sc.nextLine();
+
+                    Order e = orders.get(on);
+
             
                 switch(a){
                     case 1:
                     System.out.println("update status");
+                    String[] statuses = e.getPOssibleStatuses();
+                    for(int i =0; i <statuses.length;i++){
+                        System.out.println(i+" "+statuses[i]);
+                    }
+                    int statusIndex = sc.nextInt();
+                    sc.nextLine()           
+                    e.setStatus(statuses[statusIndex]);
                     
+
                     break;
 
                     case 2:
                     System.out.println("add dish");
+                    for(int i = 0; i<orders.size();i++){
+                        listOrders(on);
+                    }
+                    //addDish class in order class 
 
                     break;
 
                     case 3:
                     System.out.println("Remove Dish");
 
+
                     break;
 
                     case 4:
                     System.out.println("Cancel order");
+                    o.setStatus("Cancelled");
 
                     break;
                 
@@ -113,6 +136,7 @@ public class Restaurant {
         }
     }
 }
+
     }
 
     public static void makeMenu(){
@@ -186,7 +210,7 @@ public class Restaurant {
         
             for(String orderStatus:  orderStatuses){
                 for(Order o: orders){
-                    if(getType(o).equals(orderStatus)){
+                    if(o.getStatus().equals(orderStatus)){
                         System.out.println(o);
                     }
                 }

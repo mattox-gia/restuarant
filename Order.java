@@ -44,11 +44,21 @@ public class Order {
         return orderNumber == o.orderNumber;
     }
 
+    public void addDish(Food f){
+        Order
+
+    }
+
     public double getTotal(){
         for(int i = 0;i<totalOrders;i++){
             
         }
         return 0.0; //TODO
+    }
+
+    public String[] getPOssibleStatuses(){
+        String[] a = {"Created, Done"};
+        return a;
     }
 
     public String toString(){
