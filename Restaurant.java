@@ -96,7 +96,7 @@ public class Restaurant {
                         System.out.println(i+" "+statuses[i]);
                     }
                     int statusIndex = sc.nextInt();
-                    sc.nextLine()           
+                    sc.nextLine();           
                     e.setStatus(statuses[statusIndex]);
                     
 
@@ -104,22 +104,35 @@ public class Restaurant {
 
                     case 2:
                     System.out.println("add dish");
-                    for(int i = 0; i<orders.size();i++){
-                        listOrders(on);
+                    for(int i =0; i<menu.size();i++){
+                        System.out.println(i+" "+menu.get(i));
                     }
+                    int menuItem = sc.nextInt();
+                    sc.nextLine();
+
+                    Food f = menu.get(menuItem);
+                    e.addDish(f);
                     //addDish class in order class 
 
                     break;
 
                     case 3:
                     System.out.println("Remove Dish");
+                    for(int i =0; i<e.getDishes().size();i++){
+                        System.out.println(i+" "+orders.get(i));
+                    }
+                    int dishItem = sc.nextInt();
+                    sc.nextLine();
 
+                    Food d = menu.get(dishItem);
+                    e.removeDish(d);
+                    
 
                     break;
 
                     case 4:
                     System.out.println("Cancel order");
-                    o.setStatus("Cancelled");
+                    e.setStatus("Cancelled");
 
                     break;
                 

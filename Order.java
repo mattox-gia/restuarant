@@ -45,15 +45,20 @@ public class Order {
     }
 
     public void addDish(Food f){
-        Order
+        dishes.add(f);
 
     }
 
+    public void removeDish(Food d){
+        dishes.remove(d);
+    }
+
     public double getTotal(){
-        for(int i = 0;i<totalOrders;i++){
-            
+        int total = 0;
+        for(Food f: dishes){
+            total += f.getPrice();
         }
-        return 0.0; //TODO
+        return total; //TODO
     }
 
     public String[] getPOssibleStatuses(){
@@ -62,7 +67,7 @@ public class Order {
     }
 
     public String toString(){
-        return "Ordder No:"+orderNumber+" Status: "+status+" Number of Dishes:"+dishes.size()+" Total: "+getTotal()+" ";
+        return "Order No:"+orderNumber+" Status: "+status+" Number of Dishes:"+dishes.size()+" Total: "+getTotal()+" ";
     }
     
 }
